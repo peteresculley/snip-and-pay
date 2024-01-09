@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Serbia bank QR creator",
+  "version": "1.0.0",
+
+  "action": {
+    "default_icon": {
+      "16": "icon16.png"
+    }
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "externally_connectable": {
+    "matches": ["<all_urls>"]
+  },
+  "sandbox": {
+    "pages": [
+      "iframe.html"
+    ]
+  },
+  "content_security_policy": {
+    "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' * blob: 'unsafe-inline' 'unsafe-eval';"
+  },
+  "web_accessible_resources": [{
+    "resources": ["iframe.html", "iframe.js"],
+    "matches": ["<all_urls>"]
+  }],
+
+  "author": "psculley3@gmail.com"
+}
